@@ -129,6 +129,12 @@ section, [id] { scroll-margin-top: 1.5rem; }
 }
 .publication-authors.is-names a:hover { color: var(--navy); text-decoration-color: currentColor; }
 .author-block { display: inline-block; }
+.publication-affiliations {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.25rem;
+}
 .publication-footnotes {
   display: flex;
   justify-content: center;
