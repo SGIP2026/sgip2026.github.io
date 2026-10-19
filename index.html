@@ -21,7 +21,7 @@
     "name": "Learning Scene-Grounded Interaction Priors for Scene-Aware Human Motion Prediction",
     "alternativeHeadline": "SGIP",
     "url": "https://sgip2026.github.io/",
-    "image": "https://sgip2026.github.io/images/paper_figures/fig1.png",
+    "image": "https://sgip2026.github.io/images/paper_figures/teaser_camready.png",
     "datePublished": "2026",
     "inLanguage": "en",
     "keywords": "human motion prediction, scene-aware motion prediction, interaction priors, intent distillation",
@@ -46,7 +46,7 @@
   <meta property="og:title" content="SGIP: Learning Scene-Grounded Interaction Priors for Scene-Aware Human Motion Prediction">
   <meta property="og:description" content="NeurIPS 2026 · DGIST · UNIVA. Predicting future human motion from observed motion and a 3D scene through distilled interaction priors.">
   <meta property="og:url" content="https://sgip2026.github.io/">
-  <meta property="og:image" content="https://sgip2026.github.io/images/paper_figures/fig1.png">
+  <meta property="og:image" content="https://sgip2026.github.io/images/paper_figures/teaser_camready.png">
   <link rel="canonical" href="https://sgip2026.github.io/">
   <link rel="stylesheet" href="./assets/css/project.css">
   <link rel="stylesheet" href="./assets/css/research.css">
@@ -107,8 +107,10 @@
 <section class="section"><div class="container is-max-desktop">
 <div class="figure-panel teaser-panel">
 
-      <img src="./images/paper_figures/fig1.png" alt="SGIP resolves ambiguous future motion by predicting a prior over scene tokens and conditioning motion on the selected target." fetchpriority="high" decoding="async">
-      <p class="figure-caption"><span class="caption-label">Figure 1.</span> <span class="caption-title">Overview of SGIP.</span> <strong>(a)</strong> The same observed motion may lead toward different objects or through open space. <strong>(b)</strong> SGIP predicts a scene-grounded interaction prior from observed motion and the 3D scene. <strong>(c)</strong> The selected scene token conditions trajectory and full-body pose prediction; here, the person walks toward and sits on the sofa.</p>
+      <a href="./images/paper_figures/teaser_camready.pdf" target="_blank" rel="noopener">
+        <img src="./images/paper_figures/teaser_camready.png" alt="SGIP teaser: previous gaze- and distance-based methods leave future grounding ambiguous; SGIP predicts an explicit interaction prior over objects and open space to ground future motion without extra sensing at inference" width="3000" height="1025" fetchpriority="high" decoding="async">
+      </a>
+      <p class="figure-caption"><span class="caption-label">Figure 1.</span> <span class="caption-title">Overview of SGIP.</span> <strong>(a)</strong> Gaze- and distance-based methods leave the future interaction target implicit: geometry alone can be ambiguous, while gaze requires extra sensing. <strong>(b)</strong> SGIP predicts an explicit interaction prior over objects and open space, then conditions future trajectory and full-body pose prediction on the selected scene region. SGIP requires only observed motion and the 3D scene at inference; here, it predicts the person walking toward and sitting on the sofa.</p>
     </div></div></section>
 
 <section class="section section-soft" id="abstract"><div class="container is-max-desktop"><div class="columns is-centered has-text-centered"><div class="column is-four-fifths">
