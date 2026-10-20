@@ -110,7 +110,7 @@
       <a href="./images/paper_figures/teaser_camready.pdf" target="_blank" rel="noopener">
         <img src="./images/paper_figures/teaser_camready.png" alt="SGIP teaser: previous gaze- and distance-based methods leave future grounding ambiguous; SGIP predicts an explicit interaction prior over objects and open space to ground future motion without extra sensing at inference" width="3000" height="1025" fetchpriority="high" decoding="async">
       </a>
-      <p class="figure-caption"><span class="caption-label">Figure 1.</span> <span class="caption-title">Overview of SGIP.</span> <strong>(a)</strong> Gaze- and distance-based methods leave the future interaction target implicit: geometry alone can be ambiguous, while gaze requires extra sensing. <strong>(b)</strong> SGIP predicts an explicit interaction prior over objects and open space, then conditions future trajectory and full-body pose prediction on the selected scene region. SGIP requires only observed motion and the 3D scene at inference; here, it predicts the person walking toward and sitting on the sofa.</p>
+      <p class="figure-caption"><span class="caption-label">Figure 1:</span> <span class="caption-title">Overview of the proposed method.</span> Scene-aware human motion prediction (HMP) requires resolving <em>future-motion ambiguity.</em> <strong>(a)</strong> Previous methods handle this ambiguity <em>implicitly,</em> relying on motion–scene distance or gaze without an explicit interaction target; geometry alone is ambiguous when several objects lie at similar distances, and gaze requires extra sensing. <strong>(b)</strong> Given the same observed motion, a person may approach a bag, sit on the sofa or chair, or freely navigate the room. <em>SGIP</em> resolves this by predicting an explicit <em>scene-grounded interaction prior,</em> a distribution over candidate scene tokens covering both object instances and free space, from the observed motion and 3D scene alone. Distilled at training time from an intent-aware teacher that combines semantic and geometric scores, the prior places the highest probability on the sofa token, which conditions both trajectory and full-body pose prediction to correctly anticipate walking toward and sitting on the sofa, with no extra sensing at inference.</p>
     </div></div></section>
 
 <section class="section section-soft" id="abstract"><div class="container is-max-desktop"><div class="columns is-centered has-text-centered"><div class="column is-four-fifths">
@@ -294,7 +294,7 @@
 
 <footer class="footer paper-section"><div class="container"><div class="columns is-centered"><div class="column is-8"><div class="content">
   <p>This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-  Adapted from <a href="https://vision3d-lab.github.io/lightsplat/">LightSplat</a>, with SGIP paper content and figures. Original template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+  Adapted from <a href="https://vision3d-lab.github.io/lightsplat/">LightSplat</a>. Original template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
 </div></div></div></div></footer>
 
 <script src="./assets/js/project.js" defer></script>
