@@ -164,6 +164,10 @@
 
 .paper-section .figure-panel img { width: 100%; height: auto; display: block; border-radius: 16px; background: rgb(255, 255, 255); }
 
+.paper-section .framework-link { display: block; }
+
+.paper-section .framework-link img { border-radius: 0; }
+
 .paper-section .figure-caption { margin-top: 0.95rem; margin-bottom: 0.15rem; color: var(--muted); font-size: 1rem; line-height: 1.7; text-align: justify; }
 
 .paper-section .caption-label { font-weight: 700; color: var(--navy-deep); }

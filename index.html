@@ -175,7 +175,9 @@
 
 <div class="figure-panel method-figure">
       <div class="minor-title">Overall Framework of SGIP</div>
-      <img src="./images/paper_figures/fig2.png" alt="SGIP teacher-student framework with training-only intent guidance, scene-token prior distillation, and trajectory and pose prediction." loading="lazy" decoding="async">
+      <a class="framework-link" href="./images/paper_figures/cam_main.pdf" target="_blank" rel="noopener" aria-label="Open the SGIP framework figure as a full-resolution PDF">
+        <img src="./images/paper_figures/cam_main.png" alt="SGIP teacher-student framework with training-only intent guidance, prior and motion distillation, and a motion predictor for trajectory-aware full-body pose prediction." width="3600" height="1400" loading="lazy" decoding="async">
+      </a>
       <p class="figure-caption"><span class="caption-label">Figure 2.</span> <span class="caption-title">Overall framework of SGIP.</span> Candidate tokens represent <strong>object instances and a scene-global navigation region</strong>. The training-only teacher combines LLM-based intent scoring with geometric compatibility. The student learns from the teacher through <strong>prior and motion distillation</strong>, then conditions trajectory and full-body pose prediction on a selected scene token using only observed motion and the 3D scene at inference.</p>
     </div><div class="step-list mt-5"><div class="step-card accent-blue">
       <div class="signal-head"><span class="signal-icon icon-blue"><i class="fas fa-cubes"></i></span><div class="card-kicker">Step 1</div></div>
