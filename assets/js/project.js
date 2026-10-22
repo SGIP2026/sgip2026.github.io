@@ -1,4 +1,17 @@
   (function () {
+    const sectionLinks = [...document.querySelectorAll(".section-nav a")];
+    const updateSectionLink = () => {
+      sectionLinks.forEach((link) => {
+        if (link.hash === window.location.hash) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+    window.addEventListener("hashchange", updateSectionLink);
+    updateSectionLink();
+
     const parseValue = (text) => {
       const raw = text.trim();
       if (!raw || raw === "-") return null;
