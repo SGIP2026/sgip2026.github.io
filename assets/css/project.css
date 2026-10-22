@@ -86,7 +86,7 @@ section, [id] { scroll-margin-top: 1.5rem; }
 .research-card-desc { font-size: 0.77rem; color: var(--muted); }
 
 .hero { background: #fff; }
-.hero-body { padding: 2.4rem 1.5rem 1.75rem; animation: intro-in 450ms ease both; }
+.hero-body { padding: 2.4rem 1.5rem 1rem; animation: intro-in 450ms ease both; }
 .eyebrow {
   margin-bottom: 1rem;
   color: #b12b2b;
@@ -151,57 +151,47 @@ section, [id] { scroll-margin-top: 1.5rem; }
   gap: 0.5rem;
   margin-top: 1.3rem;
 }
-.resource-badge {
-  display: inline-flex;
-  overflow: hidden;
-  border-radius: 3px;
+.publication-links .button {
+  height: 2.45rem;
+  border: 0;
+  background: #363636;
   color: #fff;
-  font-size: 0.9rem;
-  line-height: 1;
-  transition: filter 160ms ease, transform 160ms ease;
+  font-size: 0.95rem;
+  transition: background-color 160ms ease, transform 160ms ease;
 }
-.resource-badge span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2rem;
-  padding: 0.45rem 0.65rem;
-}
-.resource-badge .badge-label { background: #555; }
-.resource-badge-paper .badge-value { background: #2474d2; }
-.resource-badge-poster .badge-value { background: #75529b; }
-.resource-badge-code .badge-value { background: #278648; }
-.resource-badge:hover, .resource-badge:focus-visible { color: #fff; filter: brightness(1.08); transform: translateY(-1px); }
+.publication-links a.button:hover { background: var(--navy); color: #fff; transform: translateY(-1px); }
 
 .section-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   margin: 1.15rem auto 0;
 }
 .section-nav a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  min-height: 2.45rem;
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
-  background: #363636;
-  color: #fff;
-  font-size: 0.9rem;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fafbfd;
+  color: #536276;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.25;
   white-space: nowrap;
-  transition: background-color 160ms ease, transform 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 .section-nav i { width: 1em; font-size: 0.85em; text-align: center; }
 .section-nav a:hover,
 .section-nav a:focus-visible,
-.section-nav a[aria-current='location'] { color: #fff; background: var(--navy); }
-.section-nav a:hover { transform: translateY(-1px); }
+.section-nav a[aria-current='location'] { color: var(--navy); background: #edf3fb; border-color: #c5d5eb; }
 
 .section { padding: 3rem 1.5rem; }
+.teaser-section { padding-top: 1.5rem; }
 .section-soft { background: #fafafa; }
 .section-title {
   text-align: left;
@@ -328,10 +318,11 @@ section, [id] { scroll-margin-top: 1.5rem; }
   .step-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 768px) {
-  .hero-body { padding: 1.8rem 1.1rem 1.5rem; }
+  .hero-body { padding: 1.8rem 1.1rem 0.85rem; }
   .publication-authors.is-names { font-size: 1.08rem !important; }
   .publication-footnotes { font-size: 0.76rem; }
   .section { padding: 2.4rem 1.1rem; }
+  .teaser-section { padding-top: 1.25rem; }
   .section-title { font-size: 1.65rem; }
   .section-lead, .content p { font-size: 0.96rem; }
   .figure-caption { font-size: 0.86rem; }
@@ -344,10 +335,9 @@ section, [id] { scroll-margin-top: 1.5rem; }
 @media (max-width: 480px) {
   .publication-title { font-size: 1.85rem !important; letter-spacing: -0.03em; }
   .publication-links { gap: 0.4rem; }
-  .resource-badge { font-size: 0.78rem; }
-  .resource-badge span { min-height: 1.9rem; padding: 0.4rem 0.35rem; }
+  .publication-links .button { font-size: 0.85rem; padding-right: 0.9rem; padding-left: 0.9rem; }
   .section-nav { max-width: 340px; gap: 0.45rem; margin-top: 1rem; }
-  .section-nav a { min-height: 2.45rem; gap: 0.35rem; font-size: 0.78rem; padding: 0.55rem 0.7rem; }
+  .section-nav a { min-height: 2.6rem; gap: 0.35rem; font-size: 0.85rem; padding: 0.55rem 0.6rem; }
   .step-list { grid-template-columns: 1fr; }
   .grounding-flow { grid-template-columns: 1fr; gap: 1.5rem; }
   .grounding-stage:not(:last-child)::after { top: auto; right: 50%; bottom: -1.2rem; content: '↓'; transform: translateX(50%); }
