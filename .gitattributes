@@ -1,0 +1,3 @@
+# Preserve original figure files as binary assets.
+*.pdf binary
+*.webp binary

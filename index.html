@@ -51,6 +51,7 @@
   <link rel="canonical" href="https://sgip2026.github.io/">
   <link rel="stylesheet" href="./assets/css/project.css?v=fe3db810ef">
   <link rel="stylesheet" href="./assets/css/research.css">
+  <link rel="stylesheet" href="./assets/css/refinements.css?v=803c3e5875">
 </head>
 <body>
 
@@ -145,16 +146,16 @@
   <h2 class="section-title">Why Future Motion Is Ambiguous</h2>
   <p class="section-lead">A short motion history does not uniquely determine a person's destination. Scene-aware prediction must distinguish among <strong>multiple interaction targets</strong>, reason about <strong>free navigation</strong>, and work with the observations available at deployment.</p>
   <div class="story-grid">
-<div class="story-card accent-blue">
-      <div class="signal-head"><span class="signal-icon icon-blue"><i class="fas fa-route"></i></span><div class="card-kicker">Problem 1</div></div>
+<div class="story-card">
+      <div class="signal-head"><div class="card-kicker">Problem 1</div></div>
       <div class="card-title">Multiple Possible Futures</div><p>The same motion prefix can precede approaching a bag, sitting on a chair, or walking through the room.</p>
     </div>
-<div class="story-card accent-emerald">
-      <div class="signal-head"><span class="signal-icon icon-emerald"><i class="fas fa-cubes"></i></span><div class="card-kicker">Problem 2</div></div>
+<div class="story-card">
+      <div class="signal-head"><div class="card-kicker">Problem 2</div></div>
       <div class="card-title">Implicit Scene Interaction</div><p>Scene features alone leave the interaction target implicit, without a directly supervised grounding decision.</p>
     </div>
-<div class="story-card accent-rose">
-      <div class="signal-head"><span class="signal-icon icon-rose"><i class="fas fa-eye"></i></span><div class="card-kicker">Problem 3</div></div>
+<div class="story-card">
+      <div class="signal-head"><div class="card-kicker">Problem 3</div></div>
       <div class="card-title">Unavailable Auxiliary Cues</div><p>Gaze and textual intent can disambiguate motion, but they are difficult to obtain in practical deployment.</p>
     </div></div></div></section>
 
@@ -166,11 +167,13 @@
         <span class="stage-label">Observe</span>
         <strong class="stage-title">Motion + 3D Scene</strong>
         <span class="stage-detail">History and environment</span>
+        <svg class="flow-arrow" viewBox="0 0 24 12" width="24" height="12" aria-hidden="true" focusable="false"><path d="M1 6h21M17 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </li>
       <li class="grounding-stage is-grounding">
         <span class="stage-label">Ground</span>
         <strong class="stage-title">Interaction Prior</strong>
         <span class="stage-detail">Objects and open space</span>
+        <svg class="flow-arrow" viewBox="0 0 24 12" width="24" height="12" aria-hidden="true" focusable="false"><path d="M1 6h21M17 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </li>
       <li class="grounding-stage">
         <span class="stage-label">Predict</span>
@@ -185,24 +188,26 @@
         <img src="./images/paper_figures/cam_main.png" alt="SGIP teacher-student framework with training-only intent guidance, prior and motion distillation, and a motion predictor for trajectory-aware full-body pose prediction." width="3600" height="1400" loading="lazy" decoding="async">
       </a>
       <p class="figure-caption"><span class="caption-label">Figure 2.</span> <span class="caption-title">Overall framework of SGIP.</span> Candidate tokens represent <strong>object instances and a scene-global navigation region</strong>. The training-only teacher combines LLM-based intent scoring with geometric compatibility. The student learns from the teacher through <strong>prior and motion distillation</strong>, then conditions trajectory and full-body pose prediction on a selected scene token using only observed motion and the 3D scene at inference.</p>
-    </div><div class="step-list mt-5"><div class="step-card accent-blue">
-      <div class="signal-head"><span class="signal-icon icon-blue"><i class="fas fa-cubes"></i></span><div class="card-kicker">Step 1</div></div>
+    </div><div class="step-list mt-5"><div class="step-card">
+      <div class="signal-head"><div class="card-kicker">Step 1</div></div>
       <div class="card-title">Build Scene Tokens</div><p>Represent individual object instances and a scene-global navigation region as candidate grounding tokens.</p>
     </div>
-<div class="step-card accent-indigo">
-      <div class="signal-head"><span class="signal-icon icon-indigo"><i class="fas fa-comment-dots"></i></span><div class="card-kicker">Step 2</div></div>
+<div class="step-card">
+      <div class="signal-head"><div class="card-kicker">Step 2</div></div>
       <div class="card-title">Learn an Intent-Guided Prior</div><p>At training time, combine LLM intent scores with motion-scene geometry to rank candidate tokens.</p>
     </div>
-<div class="step-card accent-amber">
-      <div class="signal-head"><span class="signal-icon icon-amber"><i class="fas fa-share-nodes"></i></span><div class="card-kicker">Step 3</div></div>
+<div class="step-card">
+      <div class="signal-head"><div class="card-kicker">Step 3</div></div>
       <div class="card-title">Distill Prior and Motion</div><p>Transfer the teacher’s token distribution and future-motion predictions to an observation-only student.</p>
     </div>
-<div class="step-card accent-teal">
-      <div class="signal-head"><span class="signal-icon icon-teal"><i class="fas fa-person-walking"></i></span><div class="card-kicker">Step 4</div></div>
+<div class="step-card">
+      <div class="signal-head"><div class="card-kicker">Step 4</div></div>
       <div class="card-title">Ground and Predict Motion</div><p>Select the top-ranked scene token and predict future trajectory and full-body poses without auxiliary cues.</p>
     </div></div><div class="figure-panel method-figure mt-5">
       <div class="minor-title">Alternative Futures from Scene Grounding</div>
-      <img src="./images/paper_figures/fig3.png" alt="Two motion futures from a fixed SGIP student conditioned on different scene tokens." loading="lazy" decoding="async">
+      <a class="framework-link" href="./images/paper_figures/cam_mult.pdf" target="_blank" rel="noopener" aria-label="Open the alternative futures figure as a full-resolution PDF">
+        <img src="./images/paper_figures/cam_mult.webp" alt="Two motion futures from a fixed SGIP student conditioned on different scene tokens." width="2400" height="612" loading="lazy" decoding="async">
+      </a>
       <p class="figure-caption"><span class="caption-label">Figure 3.</span> <span class="caption-title">Token-conditioned alternative futures.</span> With the student, observed motion, and scene held fixed, changing only the grounding token produces different trajectories and final interaction poses. The panels compare the ground-truth interaction object with another high-probability token. Standard benchmark evaluation uses <strong>hard top-1 selection</strong>; these examples illustrate alternative token-conditioned futures.</p>
     </div></div></section>
 
@@ -268,11 +273,15 @@
   <div class="qual-stack">
 <div class="figure-panel">
       <div class="minor-title">GIMO: Trajectories and Full-Body Motion</div>
-      <img src="./images/paper_figures/fig4.png" alt="SGIP and gaze-free SIF3D predictions in a kitchen, living room, and seminar room." loading="lazy" decoding="async">
+      <a class="framework-link" href="./images/paper_figures/cam_qual.pdf" target="_blank" rel="noopener" aria-label="Open the three-scene qualitative comparison figure as a full-resolution PDF">
+        <img src="./images/paper_figures/cam_qual.webp" alt="SGIP and gaze-free SIF3D predictions in a kitchen, living room, and seminar room." width="2800" height="1545" loading="lazy" decoding="async">
+      </a>
       <p class="figure-caption"><span class="caption-label">Figure 4.</span> <span class="caption-title">Qualitative comparison across three GIMO scenes.</span> The top row shows SGIP and the bottom row shows the gaze-free baseline SIF3D*. Each scene includes a top-down trajectory, the final interaction frame, and a full-body pose sequence. <strong>Yellow:</strong> observed motion; <strong>red:</strong> ground-truth future; <strong>blue:</strong> predicted future.</p>
     </div><div class="figure-panel">
       <div class="minor-title">Observation-Only Prediction and Privileged Guidance</div>
-      <img src="./images/paper_figures/fig5.png" alt="The SGIP teacher and student in the top row, compared with SIF3D with and without gaze in the bottom row." loading="lazy" decoding="async">
+      <a class="framework-link" href="./images/paper_figures/cam_ap_qual.pdf" target="_blank" rel="noopener" aria-label="Open the teacher and student comparison figure as a full-resolution PDF">
+        <img src="./images/paper_figures/cam_ap_qual.webp" alt="The SGIP teacher and student in the top row, compared with SIF3D with and without gaze in the bottom row." width="2800" height="2211" loading="lazy" decoding="async">
+      </a>
       <p class="figure-caption"><span class="caption-label">Figure 5.</span> <span class="caption-title">Comparing baselines and SGIP variants.</span> Given the same observed prefix, the top row compares the privileged SGIP teacher and the deployed SGIP student; the bottom row shows SIF3D with and without gaze. Each panel includes a top-down trajectory, a final interaction frame, and a pose sequence. The student uses <strong>neither gaze nor textual intent at inference</strong>.</p>
     </div></div></div></section>
 
